@@ -4,6 +4,7 @@
   "pids": [
     {
       "pid": "010C",
+      "pid_init": "ATSH7E0;",
       "name": "Engine RPM",
       "parameters": {
         "RPM": "((A*256)+B)/4"
@@ -11,6 +12,7 @@
     },
     {
       "pid": "010D",
+      "pid_init": "ATSH7E0;",
       "name": "Vehicle Speed",
       "parameters": {
         "SPEED": "A"
@@ -18,6 +20,7 @@
     },
     {
       "pid": "0105",
+      "pid_init": "ATSH7E0;",
       "name": "Coolant Temperature",
       "parameters": {
         "COOLANT": "A-40"
@@ -25,6 +28,7 @@
     },
     {
       "pid": "012F",
+      "pid_init": "ATSH7E0;",
       "name": "Fuel Level",
       "parameters": {
         "FUEL": "(A*100)/255"
@@ -48,6 +52,7 @@
     },
     {
       "pid": "0142",
+      "pid_init": "ATSH7E0;",
       "name": "Battery Voltage",
       "parameters": {
         "VOLTAGE": "((A*256)+B)/1000"
