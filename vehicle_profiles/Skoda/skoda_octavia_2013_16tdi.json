@@ -1,58 +1,57 @@
 {
-  "make": "Skoda",
-  "model": "Octavia III (5E)",
-  "engine": "1.6 TDI",
-  "year": 2013,
-  "protocol": "ISO 15765-4 CAN (11 bit ID, 500 kbaud)",
+  "car_model": "Skoda: Octavia III (5E) 1.6 TDI",
+  "init": "ATSP6; ATAL; ATCE; ATCAF1;",
   "pids": [
     {
+      "pid": "010C",
       "name": "Engine RPM",
-      "mode": "01",
-      "pid": "0C",
-      "formula": "((A*256)+B)/4",
-      "unit": "rpm",
-      "interval": 1000
+      "parameters": {
+        "RPM": "((A*256)+B)/4"
+      }
     },
     {
+      "pid": "010D",
       "name": "Vehicle Speed",
-      "mode": "01",
-      "pid": "0D",
-      "formula": "A",
-      "unit": "km/h",
-      "interval": 1000
+      "parameters": {
+        "SPEED": "A"
+      }
     },
     {
+      "pid": "0105",
       "name": "Coolant Temperature",
-      "mode": "01",
-      "pid": "05",
-      "formula": "A-40",
-      "unit": "°C",
-      "interval": 5000
+      "parameters": {
+        "COOLANT": "A-40"
+      }
     },
     {
+      "pid": "012F",
       "name": "Fuel Level",
-      "mode": "01",
-      "pid": "2F",
-      "formula": "(A*100)/255",
-      "unit": "%",
-      "interval": 10000
+      "parameters": {
+        "FUEL": "(A*100)/255"
+      }
     },
     {
+      "pid": "2211C4",
+      "pid_init": "ATSH7E0;",
       "name": "Engine Oil Temperature",
-      "mode": "22",
-      "pid": "11C4",
-      "header": "7E0",
-      "formula": "A-40",
-      "unit": "°C",
-      "interval": 5000
+      "parameters": {
+        "OIL_TEMP": "A-40"
+      }
     },
     {
+      "pid": "2210E0",
+      "pid_init": "ATSH7E0;",
+      "name": "Odometer",
+      "parameters": {
+        "DISTANCE": "(A*16777216+B*65536+C*256+D)/10"
+      }
+    },
+    {
+      "pid": "0142",
       "name": "Battery Voltage",
-      "mode": "01",
-      "pid": "42",
-      "formula": "((A*256)+B)/1000",
-      "unit": "V",
-      "interval": 5000
+      "parameters": {
+        "VOLTAGE": "((A*256)+B)/1000"
+      }
     }
   ],
   "low_power": {
