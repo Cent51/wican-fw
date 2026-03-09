@@ -1,0 +1,63 @@
+{
+  "make": "Skoda",
+  "model": "Octavia III (5E)",
+  "engine": "1.6 TDI",
+  "year": 2013,
+  "protocol": "ISO 15765-4 CAN (11 bit ID, 500 kbaud)",
+  "pids": [
+    {
+      "name": "Engine RPM",
+      "mode": "01",
+      "pid": "0C",
+      "formula": "((A*256)+B)/4",
+      "unit": "rpm",
+      "interval": 1000
+    },
+    {
+      "name": "Vehicle Speed",
+      "mode": "01",
+      "pid": "0D",
+      "formula": "A",
+      "unit": "km/h",
+      "interval": 1000
+    },
+    {
+      "name": "Coolant Temperature",
+      "mode": "01",
+      "pid": "05",
+      "formula": "A-40",
+      "unit": "°C",
+      "interval": 5000
+    },
+    {
+      "name": "Fuel Level",
+      "mode": "01",
+      "pid": "2F",
+      "formula": "(A*100)/255",
+      "unit": "%",
+      "interval": 10000
+    },
+    {
+      "name": "Engine Oil Temperature",
+      "mode": "22",
+      "pid": "11C4",
+      "header": "7E0",
+      "formula": "A-40",
+      "unit": "°C",
+      "interval": 5000
+    },
+    {
+      "name": "Battery Voltage",
+      "mode": "01",
+      "pid": "42",
+      "formula": "((A*256)+B)/1000",
+      "unit": "V",
+      "interval": 5000
+    }
+  ],
+  "low_power": {
+    "strategy": "voltage",
+    "sleep_voltage": 12.5,
+    "wakeup_voltage": 13.2
+  }
+}
